@@ -1,22 +1,13 @@
 'use strict';
 
-import { Logger } from 'sitka';
+import { defaultCacheOptions, WarpFactory } from 'warp-contracts';
 
-export class Example {
-	/* Private Instance Fields */
+const warp = WarpFactory.forMainnet({ ...defaultCacheOptions, inMemory: true })
+const contract = warp.contract('D3R1YW4jp1aRCdPy0q3rbmLIuKI4eKi5BRQ0PLbv8pU');
 
-	private _logger: Logger;
-
-	/* Constructor */
-
-	constructor() {
-		this._logger = Logger.getLogger({ name: this.constructor.name });
-	}
-
-	/* Public Instance Methods */
-
-	public exampleMethod(param: string): string {
-		this._logger.debug('Received: ' + param);
-		return param;
-	}
+async function read() {
+	const result = await contract.readState();
+	console.log(result.cachedValue);
 }
+
+read().finally(() => console.log('done'));

@@ -58,6 +58,7 @@
     }
   },
   "dependencies": {
-    "sitka": "^1.0.6"
+    "sitka": "^1.0.6",
+    "warp-contracts": "1.4.5"
   }
 }
