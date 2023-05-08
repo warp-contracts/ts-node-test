@@ -57,6 +57,7 @@
       "path": "./node_modules/cz-conventional-changelog"
     }
   },
+  "type": "module",
   "dependencies": {
     "sitka": "^1.0.6",
     "warp-contracts": "1.4.5"
