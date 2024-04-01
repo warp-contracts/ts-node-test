@@ -60,6 +60,6 @@
   "type": "module",
   "dependencies": {
     "sitka": "^1.0.6",
-    "warp-contracts": "1.4.39"
+    "warp-contracts": "1.4.40"
   }
 }
